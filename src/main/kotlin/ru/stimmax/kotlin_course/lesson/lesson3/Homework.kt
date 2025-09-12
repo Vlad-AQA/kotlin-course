@@ -10,7 +10,7 @@ var place:String = "Marsovo_Pole"
 //(приватное не изменяемое заранее определенное)
 private val budget_operating_expenses:String = "10000000000 рублей"
 // 5.Количество участников ( публичное изменяемое заранее изветное)
-var quantity:Int = 500
+var quantity:Int = 0
 // 6. Длительность хакатона (публичное заранее известное  не изменяемое)
 val time:String = "48 часов"
 // 7.Контактная информация и условия соглашений с поставщиками пищи, оборудования и других услуг.
@@ -20,7 +20,7 @@ private val contactsContract:String = "Здесь ссылка на контак
 //(известное заранее публичное изменяемое)
 var status:String = "ожидает проведения"
 // 9. Список спонсоров (публичное не изменяемое определенное заранее)
-val list_of_sponsors:String = "Здесь список спонсоров"
+val listSponsors:String = "Здесь список спонсоров"
 // 10. Бюджет мероприятия(приватное будет инициализирована после проведения изменяемое)
 private lateinit var budget:String
 // 11. Текущий уровень доступа к интернету(приватное известное заранее не изменяемое)
@@ -31,13 +31,13 @@ private val vlv_int_access:String by lazy {
 // (приватное будет инициализировано позже изменяемое)
 private lateinit var log_equip_team_coordination:String
 // 13. Количество команд(публичное будет инициализированно сразу изменяемое)
- var nmr_of_teams:Int = 10
+ var nmr_of_teams:Int = 0
 // 14. Перечень задач(приватное инициализация ленивая неизменяемое)
 private val list_of_tasks by lazy {
     "tasks"
 }
-// 15. План эвакуации(публичное неизменяемое заранее известное)
-val evacuation_plan:String = "plan"
+// 15. План эвакуации(публичное изменяемое заранее известное)
+var evacuation_plan:String = "plan"
 //  16. Список доступного оборудования (всё, что выделено для использования на мероприятии)
 //(приватное известное заранее не изменяемое)
 private val list_equipment:String = "list"
@@ -130,7 +130,8 @@ private var isEventApproved:Boolean? = null
 // (публичное определенное изменяемое)
 var specialEquipmentAvailable:Boolean? = null
 // 37. Список партнеров мероприятия(приватное изменяемое инциализация отложена)
- private lateinit var eventPartners:String
+  lateinit var eventPartners:String
+    private set
  // 38. Отчет, включающий фотографии, видео и отзывы, генерируется
 // и становится доступен после завершения мероприятия.
 // (публичное неизменяемое иницализация после)
@@ -145,5 +146,4 @@ private val prizePolicy:String by lazy{
 // 40. Список разыгрываемых призов(публичное неизменяемое инициализация ленивая)
 val prizePool:String by lazy {
     "PrizeList"
-}
 }
