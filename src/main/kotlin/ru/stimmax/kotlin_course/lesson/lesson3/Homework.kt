@@ -129,4 +129,21 @@ private var isEventApproved:Boolean? = null
 // (например, специальному оборудованию)
 // (публичное определенное изменяемое)
 var specialEquipmentAvailable:Boolean? = null
+// 37. Список партнеров мероприятия(приватное изменяемое инциализация отложена)
+ private lateinit var eventPartners:String
+ // 38. Отчет, включающий фотографии, видео и отзывы, генерируется
+// и становится доступен после завершения мероприятия.
+// (публичное неизменяемое иницализация после)
+ val eventMediaReport:String by lazy{
+     "Media"
+ }
+// 39. Внутренние правила распределения призов
+// (приватное неизменяемое инциализация сразу)
+private val prizePolicy:String by lazy{
+    "Policy"
+}
+// 40. Список разыгрываемых призов(публичное неизменяемое инициализация ленивая)
+val prizePool:String by lazy {
+    "PrizeList"
+}
 }
