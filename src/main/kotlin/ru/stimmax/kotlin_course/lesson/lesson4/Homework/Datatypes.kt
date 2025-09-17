@@ -5,14 +5,14 @@ val v2:Long = 98765432123456789L
 val v3:Float = 23.45f
 val v4:Double = 0.123456789
 val v5:String = "Kotlin & Java"
-val v6:Boolean = FALSE
+val v6:Boolean = False
 val v7:Char = 'c'
 val v8:Short = 500
 val v9:Long = 4294967296L
 val v10:Float = 18.0f
 val v11:Double = -0.001
 val v12:String = "OpenAI"
-val v13:Boolean = "true"
+val v13:Boolean = true
 val v14:List<Int> = listOf(3, 14)
 val v15:Char = '9'
 val v16:Short = 2048
@@ -57,7 +57,7 @@ val v47:Map<String, Int> = mapOf("Mak" to 1000, "KFC" to 1200)
 // 4. Хранить длину очереди в столовой до миллиардной доли сантиметра.
 val v48:Long = 128638716239871528L
 // 5. Хранить факт, закрыт ли баг после того, как его просто переименовали в фичу.
-val 49:Boolean = fols
+const val 49:Boolean = false
 // 6. Хранить количество свистков чайника за день.
 val v50:Byte = 50
 // 7. Хранить количество нажатий котом на клавиатуру ноутбука за всё время твоей работы.
@@ -67,7 +67,7 @@ val v52:Long = 1276565123673L
 // 9. Хранить массу воздуха в спускающем матрасе после нападения кота в долях грамма.
 val v53:Double = 1425.54
 // 10. Хранить словарь «название стартапа → сумму потерь инвесторов».
-val v54:Map<String, Int> = mapOf("nam1" to 50000, "name2" to 55000)
+val v54:Map<String, Double> = mapOf("nam1" to 50000.0, "name2" to 55000.0)
 // 11. Хранить строку «починилось само», чтобы закрывать тикеты без лишних слов.
 val v55:String = "«починилось само»"
 // 12. Хранить список тем для митингов, которые на самом деле никому не нужны.

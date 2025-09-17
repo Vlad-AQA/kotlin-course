@@ -179,5 +179,5 @@ private val maximumAttendees:Int by lazy {
 // 47. Количество часов, отведенное каждой команде для работы над проектом.
 // (приватное известно заранее инициализация ленивая)
 private val teamWorkHours:String by lazy {
-    48 часов
+    "48 часов"
 }

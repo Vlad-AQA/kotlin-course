@@ -1,0 +1,51 @@
+(3 + 2 < 6) && (4 * 2 == 8)
+
+
+(10 - 5 >= 5) || (2 * 3 != 6)
+
+
+(8 / 2 == 4) && (7 % 3 != 1)
+true && false == false
+
+(8 % 4 == 2) || (2 + 2 == 5)
+false || false == false
+
+((3 + 4) < 8) && (12 / 4 == 4) || (5 % 2 == 1)
+true && false || true == true
+
+((10 - 5) > 3) || (6 * 2 == 12) && !(9 / 3 > 2)
+true  || true && false == true
+
+((2 * 5) == 10) && !(7 - 2 < 5) || (8 / 2 != 4)
+true && true || false == true
+
+((var a = 4; a-- == 4) || (5 * 2 != 10)) && !(3 + 1 == 4)
+true || lase && false == false
+
+(var b = 3; ++b == 3) && (6 / 2 == 3) || !(7 - 2 != 5)
+lase && true || true
+
+(var c = 1; --c != 0) || (4 % 2 == 0) && (5 + 0 == 5)
+false || true && true == true
+
+
+val userLang: String? = null
+val defaultLang = "English"
+val currentLang = userLang ?:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
