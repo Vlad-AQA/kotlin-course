@@ -1,4 +1,4 @@
-package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson5
+package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson5.homeworks
 
 fun main() {
 
