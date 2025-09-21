@@ -21,7 +21,7 @@ fun main() {
 // которая составляет 0,5% от его стоимости. В случае, если стоимость не указана,
 // то берётся стандартная стоимость в $50
 //Задача: Рассчитать полную стоимость доставки.
-    val deliveryPrice: Double ? = null
+    val deliveryPrice: Double ? = 30.0
     val standardDeliveryCost: Double = 50.0
     val cargoInsurance: Double = (deliveryPrice ?: standardDeliveryCost) * 0.005
     val totalDeliveryCost:Double = (deliveryPrice ?: standardDeliveryCost) + cargoInsurance
