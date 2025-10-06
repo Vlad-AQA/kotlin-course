@@ -51,7 +51,7 @@ fun exe(arg: String) {
             "с парой интересных вызовов на пути"
         )
 
-        !arg.contains(Regex("\\s")) -> "Иногда, $arg, но не всегда"
+        !arg.contains(" ") -> "Иногда, $arg, но не всегда"
         else -> arg
     }
     println(phrase)
@@ -63,9 +63,9 @@ fun exe(arg: String) {
 //Используй indexOf или split для получения правой части сообщения.
 
 fun exe1(arg: String) {
-    val date = arg.split(" ")
-    println(date[5])
-    println(date[6])
+    val date = arg.split(" ").reversed()
+    println(date[1])
+    println(date[0])
 }
 //3. Маскирование личных данных
 //Дана строка с номером кредитной карты, например "4539 1488 0343 6467".
@@ -82,7 +82,8 @@ fun exe2(arg: String) {
 // Преобразуйте его в строку "username [at] example [dot] com", используя функцию replace()
 
 fun exe3(arg: String) {
-    val finishString = arg.replace("@", " [at] ").replace(".", " [dot] ")
+    val finishString = arg.replace("@", " [at] ")
+        .replace(".", " [dot] ")
     println(finishString)
 }
 
@@ -91,7 +92,8 @@ fun exe3(arg: String) {
 // (может быть любым). Извлеките название файла с расширением.
 
 fun exe4(arg: String) {
-    val fileSplit = arg.split("/").reversed()
+    val fileSplit: List<String> = arg.split("/")
+        .reversed()
     println(fileSplit[0])
 }
 // 6. Создание аббревиатуры из фразы.
