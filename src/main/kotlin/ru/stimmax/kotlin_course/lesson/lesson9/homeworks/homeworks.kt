@@ -68,7 +68,7 @@ fun main() {
 
     val ar11 = arrayOf(10, 20, 30, 40, 50)
     var counter = 0
-    var indexOf = -1
+    val indexOf = -1
     while (counter < ar11.size) {
         if (ar11[counter] == 5){
             indexOf == counter
