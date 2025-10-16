@@ -44,7 +44,7 @@ fun main() {
 
 
     val setOfNumbers = setOf(3, 4, 5, -5, 14)
-    val firstElement = setOfNumbers.last()
+    val firstElement = setOfNumbers.first()
     val lastElement = setOfNumbers.last()
     println(firstElement)
     println(lastElement)
@@ -82,8 +82,8 @@ fun main() {
 
    // Пример: Преобразовать список чисел в строку, разделенную запятыми.
 
-    val numbersString = numbers.joinToString(separator = " : ") {"${it * 2}"}
-    println(numbersString) // Вывод: "-1, 2, -3, 4, -5"
+    val numbersString = numbers.joinToString(separator = " , ") {"${it * 2}"}
+    println("numbersString = $numbersString") // Вывод: "-1, 2, -3, 4, -5"
 
    // сортирует элементы коллекции в возрастающем порядке.
 
