@@ -225,7 +225,7 @@ fun exe5(list: List<Int>): Map<String, List<Int>> {
 // и вернуть его, либо null если значения не нашлось.
 
 fun exe6(list: List<Int?>, number: Int): Int? {
-    return list.firstOrNull() { it != null && it > number }
+    return list.filterNotNull().firstOrNull() { it > number }
 
 }
 
