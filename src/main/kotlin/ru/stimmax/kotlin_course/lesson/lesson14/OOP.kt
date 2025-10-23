@@ -53,8 +53,8 @@ fun main() {
 
     Moon.showPhase()
 
-    val product = Product("Шляпа", 100.0, 5)
-    product.printProduct()
+    val product = Product("Шляпа", 100.0, 1)
+    println("Цена ${product.name} ${product.prices()}")
 
     val concert = Concert("ДДТ", "Москва", 5000.0, 5000, 0)
     concert.info()

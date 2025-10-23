@@ -1,7 +1,7 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks
 
-class Product(val name: String, var price: Double, var quantity: Int) {
-    fun printProduct() {
-        println("Продукт: $name, цена: $price, остаток: $quantity ")
+data class Product(val name: String, val price: Double, val quantity: Int) {
+    fun prices(): Double{
+        return price
     }
 }

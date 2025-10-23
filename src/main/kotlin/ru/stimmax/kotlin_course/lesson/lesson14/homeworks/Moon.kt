@@ -16,4 +16,5 @@ object Moon {
             println("Луну не видно")
         }
     }
+
 }
