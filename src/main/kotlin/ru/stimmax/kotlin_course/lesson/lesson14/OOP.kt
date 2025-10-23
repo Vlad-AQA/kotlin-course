@@ -1,5 +1,11 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14
 
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Concert
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Emotion
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Moon
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Party
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Product
+import kotlin.math.E
 
 
 fun main() {
@@ -38,13 +44,21 @@ fun main() {
     val pasta = Dish("Pasta Carbonara", listOf("Pasta", "Eggs", "Parmesan", "Bacon"), 12.99)
     pasta.describeDish()  // Dish: Pasta Carbonara, Price: $12.99, Ingredients: Pasta, Eggs, Parmesan, Bacon
 
+    val party = Party("Москва", 55)
 
+    party.details()
 
+    val emotion = Emotion("Страх", 7)
+    emotion.express()
 
+    Moon.showPhase()
 
+    val product = Product("Шляпа", 100.0, 5)
+    product.printProduct()
 
-
-
-
+    val concert = Concert("ДДТ", "Москва", 5000.0, 5000, 0)
+    concert.info()
+    concert.buyTicket()
+    concert.info()
 
 }
