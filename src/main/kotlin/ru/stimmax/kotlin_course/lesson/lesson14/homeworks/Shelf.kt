@@ -1,5 +1,7 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks
 
+// Вместимость полки (capacity): максимальная сумма букв всех названий предметов, которые могут быть размещены на полке.
+// Список предметов (items): хранит названия предметов на полке.
 class Shelf(val capacity: Int, val items: MutableList<String>) {
 
    // Добавление Предмета (addItem):
@@ -47,8 +49,7 @@ class Shelf(val capacity: Int, val items: MutableList<String>) {
 
     // Получение списка предметов (getItems):
     // Возвращает неизменяемый список предметов
-    fun getItems(): List<String> = items.toList()
-
+    fun getItemsList(): List<String> = items.toList()
 
 
 
