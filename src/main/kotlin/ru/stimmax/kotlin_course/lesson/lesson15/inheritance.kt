@@ -83,6 +83,8 @@ class Helicopter(
     flightAltitude: Int
 ) : Aircraft(maxWeight, passengerCapacity, serialNumber, flightAltitude)
 
+class livingСreature
+
 fun main() {
     val car = Car(
         400,
