@@ -5,6 +5,7 @@ import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Emotion
 import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Moon
 import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Party
 import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Product
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Rack
 import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson14.homeworks.Shelf
 import kotlin.math.E
 
@@ -63,9 +64,12 @@ fun main() {
     concert.info()
 
     val shelf = Shelf(50, mutableListOf())
+    val shelf1 = Shelf(50, mutableListOf())
     val a = shelf.addItems("нога")
     println(a)
     val b = shelf.getItemsList()
     println(b)
+
+    val rack = Rack(mutableListOf(shelf, shelf1), 10)
 
 }
