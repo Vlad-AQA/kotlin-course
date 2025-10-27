@@ -13,9 +13,9 @@ abstract class GeometricShapes(
 
 }
 open class Polygon(
-     name: String,
-     is3D: String,
-     val numberAngles: Int
+    name: String,
+    is3D: String,
+    val numberAngles: Int
 ): GeometricShapes(name , is3D) {
     override fun square(): Double {
         return 0.0
