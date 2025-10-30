@@ -4,6 +4,7 @@ class InkjetPrinter(
     color: String,
     background: String
 ) : Printer(color, background) {
+    // хардкодим список сами
     val colorBackgroundPairs = listOf(
         Colors.RED to Background.WHITE,
         Colors.GREEN to Background.BLACK,
@@ -17,7 +18,7 @@ class InkjetPrinter(
         val words = text.split(" ")
         var pairIndex = 0
         for (word in words) {
-            val (clr, bg) = colorBackgroundPairs[pairIndex]
+            val (clr, bg) = colorBackgroundPairs[pairIndex]// распаковка ключей значений
             printColored(word, clr, bg)
             pairIndex++
             if (pairIndex == colorBackgroundPairs.size) {
