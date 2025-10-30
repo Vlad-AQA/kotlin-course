@@ -32,5 +32,14 @@ fun main() {
     cartItem.addToCart(7)
     println(cartItem.item)
 
+    cartItem.addToCart(listOf(101, 303, 28))
+    println(cartItem.item)
+
+    cartItem.addToCart(7, 3)
+    println(cartItem.item)
+
+    cartItem.addToCart(mapOf(202 to 7))
+    println(cartItem.item)
+
 
 }
