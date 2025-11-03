@@ -1,5 +1,6 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson16.homeworks
 
+
 class CartItem(
     val item: MutableMap<Int, Int>
 ) {
@@ -17,6 +18,20 @@ class CartItem(
 
     fun addToCart(idList: List<Int>) {
         idList.forEach { item[it] = (item[it] ?: 0) + 1 }
+    }
+
+    override fun toString(): String {
+        var unique = 0
+        var text = ""
+        val total = item.values.sum()
+        for ((itemId, amount) in item) {
+            text += "Товар $itemId количество $amount\n"
+            unique++
+        }
+
+        text += "Уникальных артикулов: $unique\n"
+        text += "Всего товаров: $total\n"
+        return text
     }
 }
 
@@ -41,5 +56,6 @@ fun main() {
     cartItem.addToCart(mapOf(202 to 7))
     println(cartItem.item)
 
+    println(cartItem)
 
 }
