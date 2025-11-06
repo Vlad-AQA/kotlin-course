@@ -95,6 +95,11 @@ class ChildrenClass(
     override fun generate(): String {
         return "Это генерация из дочернего класса"
     }
+
+    fun setProtectedField(value: String): String {
+        protectedField = value
+        return protectedField
+    }
 }
 
 fun main() {
@@ -104,5 +109,7 @@ fun main() {
     childrenClass.publicField = "Антонио Бандераса"
     println(childrenClass.getAll())
     childrenClass.setPrivateField("Жора")
+    println(childrenClass.getAll())
+    childrenClass.setProtectedField("Наследник Жоры")
     println(childrenClass.getAll())
 }
