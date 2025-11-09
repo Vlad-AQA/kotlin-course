@@ -41,6 +41,7 @@ abstract class BaseClass(
     }
 
     // 7. объясни, почему эта функция не может быть публичной
+    // потому что protected class ProtectedClass()
     protected open fun getProtectedClass() = ProtectedClass()
     protected open fun verifyPublicField(value: String): Boolean {
         return value.length < 3
@@ -80,12 +81,6 @@ class ChildrenClass(
     override fun verifyPublicField(value: String): Boolean {
         return value.length > 3
     }
-
-    /* override var protectedField: String
-         get() = super.protectedField
-         set(value) {
-             super.protectedField = value
-         } */
 
 
     private fun privatePrint() {

@@ -1,7 +1,10 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson17.homeworks
 
 class SlotMachine(
-    val color: String, val model: String, val pinKod: String, val joystick: Boolean
+    val color: String,
+    val model: String,
+    val pinKod: String,
+    val joystick: Boolean
 ) {
     private var enabled = false
     private var osLoaded = false
