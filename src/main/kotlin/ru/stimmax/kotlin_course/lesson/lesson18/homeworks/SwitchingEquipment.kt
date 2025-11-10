@@ -17,7 +17,6 @@ abstract class ProgrammableEquipment(
 ) : SwitchingEquipment(), Programmable {
 
     override fun programAction(action: String) {
-        powerOn()
         this.action = action
         println("Выбрана программа $action")
     }
@@ -78,4 +77,65 @@ class Refrigerator(
         openDoor = false
         super.close()
     }
+}
+
+class WashingMachine(
+    action: String,
+    val serialNumber: String,
+    var inclusion: Boolean,
+    val capacity1: Int
+) : Equipment(action, 90), WaterContainer {
+
+    override fun open() {
+        println("Барабан открыт")
+    }
+
+    override fun close() {
+        println("Барабан закрыт")
+    }
+
+    override fun powerOff() {
+        inclusion = false
+        super.powerOn()
+    }
+
+    override fun powerOn() {
+        inclusion = true
+        super.powerOn()
+    }
+
+    override val capacity: Int
+        get() = capacity1
+
+    override fun fillWater(amount: Int) {
+        if (inclusion) {
+            if (capacity >= amount) {
+                println("Идет подача воды")
+            } else {
+                println("Превышен обьем")
+            }
+        } else {
+            println("Нет питания")
+        }
+    }
+
+    override fun getWater(amount: Int) {
+        if (inclusion) {
+            println("Слив воды")
+        } else {
+            println("Нет питания")
+        }
+    }
+
+    override fun programAction(action: String) {
+        if (inclusion) {
+            super.programAction(action)
+        } else {
+            println("Нет питания")
+        }
+    }
+}
+
+fun main() {
+
 }

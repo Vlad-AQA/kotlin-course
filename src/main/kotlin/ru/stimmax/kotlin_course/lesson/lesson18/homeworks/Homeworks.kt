@@ -81,9 +81,10 @@ interface Rechargeable {
     fun recharge()
 }
 
-abstract class Refrigerator() : Powerable, Openable, TemperatureRegulatable, LightEmitting
+abstract class Refrigerator1() : Powerable, Openable, TemperatureRegulatable, LightEmitting
 
-abstract class WashingMachine() : Powerable, Openable, Programmable, AutomaticShutdown, WaterConnection, WaterContainer,
+abstract class WashingMachine1() : Powerable, Openable, Programmable, AutomaticShutdown, WaterConnection,
+    WaterContainer,
     Drainable
 
 abstract class SmartLamp() : Powerable, Openable, Rechargeable, LightEmitting
