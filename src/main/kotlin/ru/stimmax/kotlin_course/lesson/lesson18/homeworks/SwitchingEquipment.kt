@@ -1,7 +1,10 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson18.homeworks
 
 
-abstract class SwitchingEquipment() : Powerable {
+abstract class SwitchingEquipment(
+    // тут добавить поле для нейминга
+    // в абстрактные классы добавляем поля которые обязательны для всех наследников
+) : Powerable {
     override fun powerOn() {
         println("Включили")
     }
@@ -130,6 +133,66 @@ class WashingMachine(
     override fun programAction(action: String) {
         if (inclusion) {
             super.programAction(action)
+        } else {
+            println("Нет питания")
+        }
+    }
+
+    override fun setTemperature(temp: Int) {
+        if (inclusion) {
+            super.setTemperature(temp)
+        } else {
+            println("Нет питания")
+        }
+    }
+}
+
+class Kettle(
+    action: String,
+    val capacity1: Int,
+    var temp: Int = 0,
+    var inclusion: Boolean = false
+
+) : Equipment(action, 100), AutomaticShutdown {
+
+    var counter = 0
+    override fun powerOn() {
+
+        inclusion = true
+        for (i in 1..10) {
+            if (counter < 10) {
+                temp += 10
+                counter++
+            }
+        }
+        super.powerOn()
+    }
+
+    override fun powerOff() {
+        inclusion = false
+        super.powerOff()
+    }
+
+    override fun open() {
+        println("Чайник открыт")
+    }
+
+    override fun close() {
+        println("Чайник закрыт")
+    }
+
+    override val sensorType: String
+        get() = "Датчик"
+
+    override val maxSensoredValue: Int
+        get() = maxT
+
+    override fun startMonitoring() {
+        if (inclusion) {
+            if (temp == maxT) {
+                inclusion = false
+                println("Чайник вскипел, отключение питания")
+            }
         } else {
             println("Нет питания")
         }
