@@ -87,6 +87,7 @@ class OddValidator() : Validatorable<Int> {
     }
 }
 
+
 fun main() {
 
 }
