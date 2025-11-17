@@ -71,10 +71,27 @@ fun String.decrypt(base: Int): String {
     return this.map { it - base }.joinToString("")
 }
 
+// Напиши метод расширения строки, который будет принимать список имён пользователей
+// и выводить в консоли исходную строку побуквенно в верхнем регистре в столбик: имя автора и букву под ним
+
+fun String.twit(list: List<String>) {
+    this.uppercase()
+        .toList()
+        .zip(list)
+        .forEach { (ch, name) ->
+            println(ch)
+            println(name)
+        }
+}
+
 fun main() {
 
     val a = "Это проверочка очка".encrypt(4)
     println(a)
+
     val b = a.decrypt(4)
     println(b)
+
+    val c = "тут еще проверочка".twit(listOf("Ваня Попкин", "Денис Репка", "Димон Скупидонк"))
+    println(c)
 }
