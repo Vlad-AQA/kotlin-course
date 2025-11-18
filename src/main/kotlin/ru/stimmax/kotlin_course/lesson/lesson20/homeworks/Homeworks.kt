@@ -21,12 +21,14 @@ fun Array<Int?>.fun10(): Pair<Int?, Int?> {
 // если в функцию передано true и по убыванию, если false (используем функции sort() и sortDescending()
 
 fun <T : Comparable<T>> MutableList<T>.fun11(arg: Boolean): List<T> {
+    val a = toList()
     if (arg) {
         this.sort()
     } else {
         this.sortDescending()
     }
-    return this
+    return a
+
 }
 
 // Создайте функцию-расширение для nullable словаря с дженериком:
@@ -37,9 +39,9 @@ fun <T : Comparable<T>> MutableList<T>.fun11(arg: Boolean): List<T> {
 // Значений из nullable дженерика, взятых из изначального ключа-списка по индексу из аргумента,
 // если такого индекса нет - значением будет null
 
-fun <T> Map<T?, List<T?>>?.fun22(arg: Int): Map<String?, T?>? {
+fun <T> Map<T, List<T>>?.fun22(arg: Int): Map<String, T?>? {
     return this?.asIterable()?.associate {
-        it.key?.toString() to it.value.getOrNull(arg)
+        it.key.toString() to it.value.getOrNull(arg)
 
     }
 }
@@ -52,7 +54,7 @@ fun <T> Map<T?, List<T?>>?.fun22(arg: Int): Map<String?, T?>? {
 // Протестируйте функцию на разных типах чисел.
 // Для получения отклонения, у разницы чисел нужно вызвать свойство absoluteValue.
 
-fun <T : Number> Number.within(other: T, deviation: T): Boolean {
+fun Number.within(other: Number, deviation: Number): Boolean {
     return ((this.toDouble() - other.toDouble()).absoluteValue <= deviation.toDouble())
 }
 
@@ -75,13 +77,17 @@ fun String.decrypt(base: Int): String {
 // и выводить в консоли исходную строку побуквенно в верхнем регистре в столбик: имя автора и букву под ним
 
 fun String.twit(list: List<String>) {
+    var counter = 0
     this.uppercase()
-        .toList()
-        .zip(list)
-        .forEach { (ch, name) ->
-            println(ch)
-            println(name)
+        .forEach {
+            println(list[counter])
+            println(it)
+            counter++
+            if (counter > list.lastIndex)
+                counter = 0
+
         }
+
 }
 
 fun main() {
