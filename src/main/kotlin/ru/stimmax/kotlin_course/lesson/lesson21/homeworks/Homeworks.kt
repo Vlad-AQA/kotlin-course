@@ -52,6 +52,27 @@ fun Any.toSquare(): Double {
     return num * num
 }
 
+// Напишите функцию sumIntOrDoubleValues, которая принимает список элементов типа Any
+// и возвращает сумму всех целочисленных (Int) и вещественных (Double) значений в списке.
+// Все остальные типы должны быть проигнорированы.
+
+fun sumIntOrDoubleValues(list: List<Any>): Double {
+    return list.sumOf {
+        when (it) {
+            is Int -> it.toDouble()
+            is Double -> it
+            else -> 0.0
+        }
+    }
+}
+
+// Напиши функцию countStrings, которая принимает список элементов типа Any и возвращает количество строк (String) в этом списке.
+// Все остальные типы нужно проигнорировать.
+
+fun countStrings(list: List<Any>): Int {
+    return list.count { it is String }
+}
+
 
 fun main() {
 
