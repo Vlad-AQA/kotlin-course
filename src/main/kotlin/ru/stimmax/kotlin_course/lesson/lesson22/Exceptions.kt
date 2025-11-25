@@ -53,4 +53,3 @@ class CustomException : RuntimeException {
 }
 
 
-class OrderException(message: String) : RuntimeException(message)
