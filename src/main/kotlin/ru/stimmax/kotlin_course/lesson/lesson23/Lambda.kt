@@ -82,3 +82,89 @@ val calculateDeliveryTime1: OrderProcessor.(Int) -> String = {
     }
     "Ожидаемая дата доставки: через $deliveryTimeDays дня(ей) по адресу $deliveryAddress."
 }
+
+// Создай функцию, которая не принимает аргументов и печатает приветственное сообщение. Трансформируй
+// в анонимную функцию
+// в лямбда выражение с указанием типа
+// в краткое лямбда выражение
+fun greet() {
+    println("Тут приветственное сообщение")
+}
+
+val greet1 = fun() {
+    println("Тут приветственное сообщение")
+}
+
+val greet3: () -> Unit = { println("Тут приветственное сообщение") }
+
+val greet2 = { println("Тут приветственное сообщение") }
+
+// Создай функцию, которая принимает строку и возвращает его длину. Трансформируй
+// в анонимную функцию
+// в лямбда выражение с указанием типа
+// в краткое лямбда выражение
+
+fun getLength(arg: String): Int {
+    return arg.length
+}
+
+val getLength1 = fun(a: String): Int {
+    return a.length
+}
+
+val getLength2: (String) -> Int = { it.length }
+
+val getLength3 = { it: String -> it.length }
+
+// Создай функцию-расширение класса String, которая принимает число и символ и возвращает true
+// если строка короче этого числа и содержит переданный символ. Трансформируй в анонимную функцию, потом в лямбду с типом
+
+fun String.repeatChar(num: Int, char: Char): Boolean {
+    return length < num && contains(char)
+}
+
+val repeatChar = fun String.(num: Int, char: Char): Boolean {
+    return length < num && contains(char)
+}
+
+val repeatChar1: String.(Int, Char) -> Boolean = { n, c ->
+    length < n && contains(c)
+
+}
+
+// Создай функцию-расширение дженерика, которая принимает дженерик и выводит его на печать.
+// Попробуй трансформировать в анонимную функцию
+
+fun <T> T.printArg1(a: T) {
+    println(a)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
