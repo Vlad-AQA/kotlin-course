@@ -2,12 +2,7 @@ package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson23.homeworks
 
 fun main() {
 
-    // Создай аналогичную анонимную функцию.
-    fun(list: List<Int>): Int {
-        require(list.isNotEmpty()) { "Пустой получается" }
-        val evenNum = list.filter { it % 2 == 0 }
-        return evenNum.sum() / evenNum.size
-    }
+
 //Создай аналогичное лямбда выражение с указанием типа.
     val evenAverage1: (List<Int>) -> Int = { list ->
         require(list.isNotEmpty()) { "Пустой получается" }
@@ -36,5 +31,7 @@ fun evenAverage(list: List<Int>): Int {
     return evenNum.sum() / evenNum.size
 }
 
-// Создай аналогичную анонимную функцию
+
+
+
 
