@@ -76,10 +76,15 @@ fun smartColorizeWords(words: String): String {
     }
 }
 
-fun caunterColorizeWords(words: String): String {
-    
-}
+//fun caunterColorizeWords(words: String): String {
+//    words.forEach { }
+//}
 
+fun main() {
+    val a =
+        "owinevoinerviwn woiervnwpirnv vwpirjvepwirnv vwpidjvpweierjv viochfivh orivh ej ien ci n".colorizeWords(::smartColorizeWords)
+    println(a)
+}
 
 
 
