@@ -41,11 +41,11 @@ fun <T> T.ex3(): (String) -> T {
     return { this }
 }
 
-//Напиши функцию colorizeWords которая печатает слова из длинного предложения
-//разбитого по пробелу разным цветом. Правило подбора цвета для каждого слова
-//нужно передавать в виде функции, которая принимает слово и возвращает это же
-//слово но уже "в цвете" через функцию colorize.
-//Функция colorizeWords должна расширять строку и эту же строку и обрабатывать.
+// Напиши функцию colorizeWords которая печатает слова из длинного предложения
+// разбитого по пробелу разным цветом. Правило подбора цвета для каждого слова
+// нужно передавать в виде функции, которая принимает слово и возвращает это же
+// слово но уже "в цвете" через функцию colorize.
+// Функция colorizeWords должна расширять строку и эту же строку и обрабатывать.
 
 object Colors {
     const val RESET = "\u001B[0m"
@@ -62,8 +62,8 @@ fun String.colorize(color: String): String {
     return "$color$this${Colors.RESET}"
 }
 
-fun String.colorizeWords(fn: (String) -> String): String {
-    return ""
+fun String.colorizeWords(fn: (String) -> String) {
+    println(this.split(" ").joinToString(" ") { word -> fn(word) })
 }
 
 
