@@ -66,8 +66,19 @@ fun String.colorizeWords(fn: (String) -> String) {
     println(this.split(" ").joinToString(" ") { word -> fn(word) })
 }
 
+fun smartColorizeWords(words: String): String {
+    return when {
+        words.first().isUpperCase() -> words.colorize(Colors.RESET)
+        words.length < 3 -> words.colorize(Colors.CYAN)
+        words.length > 6 -> words.colorize(Colors.BLUE)
+        words.length % 2 == 0 -> words.colorize(Colors.YELLOW)
+        else -> words.colorize(Colors.RED)
+    }
+}
 
-
+fun caunterColorizeWords(words: String): String {
+    
+}
 
 
 
