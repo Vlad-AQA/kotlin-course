@@ -76,14 +76,38 @@ fun smartColorizeWords(words: String): String {
     }
 }
 
-//fun caunterColorizeWords(words: String): String {
+
+//fun counterColorizeWords(words: String): String {
 //    words.forEach { }
 //}
 
 fun main() {
+
+    val colors = listOf(
+        Colors.RED,
+        Colors.GREEN,
+        Colors.YELLOW,
+        Colors.BLUE,
+        Colors.PURPLE,
+        Colors.CYAN,
+        Colors.WHITE
+    )
+
+
+    // в душе не ебу что тут написано так и непонял
+    var counter = 0
+    { _: String ->
+        if (counter > colors.size) counter = 0
+        colors[counter++]
+
+    }
+
+    val b = "привет мир тест".colorizeWords { word -> word.colorize(Colors.RED) }
+
     val a =
         "owinevoinerviwn woiervnwpirnv vwpirjvepwirnv vwpidjvpweierjv viochfivh orivh ej ien ci n".colorizeWords(::smartColorizeWords)
     println(a)
+    println(b)
 }
 
 
