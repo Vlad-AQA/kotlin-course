@@ -108,7 +108,11 @@ fun main() {
         "owinevoinerviwn woiervnwpirnv vwpirjvepwirnv vwpidjvpweierjv viochfivh orivh ej ien ci n".colorizeWords(::smartColorizeWords)
     println(a)
     println(b)
+
 }
+
+
+
 
 
 
