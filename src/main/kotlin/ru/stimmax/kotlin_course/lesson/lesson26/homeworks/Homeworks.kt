@@ -63,4 +63,35 @@ fun main() {
         }
         parentFile.deleteRecursively()
     }
+
+//    Создайте файл workspace/task5/config/config.txt.
+//    запишите в него список параметров (в формате ключ=значение),
+//    а затем прочитайте файл и выведите только значения.
+
+    File("workspace/task5/config/config.txt").apply {
+        listOf(
+            "ключ" to "значение",
+            "ключ2" to "значение2",
+            "ключ3" to "значение3"
+        ).joinToString("\n") { (key, value) ->
+            "$key=$value"
+        }.also { writeText(it) }
+        readLines()
+            .map { it.split("=").getOrNull(1) }
+            .forEach { println(it) }
+    }
+
+    // Пройди по всем вложенным директориям workspace
+    // и выведи в консоль сначала пути директорий, а потом пути файлов
+
+    File("workspace").apply {
+        walk()
+            .filter { it.isDirectory }
+            .forEach { println(it.path) }
+        walk()
+            .filter { it.isFile }
+            .forEach { println(it.path) }
+    }
+
+
 }
