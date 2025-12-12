@@ -94,4 +94,20 @@ fun main() {
     }
 
 
+//    Создайте директорию workspace/task7/docs.
+//    Проверь, есть ли файл с именем readme.md.
+//    Если файла нет, создайте его и запишите текст "This is a README file.".
+//    Проверьте текст в файле.
+
+    File("workspace/task7/docs").apply {
+        mkdirs()
+        val readme = resolve("readme.md")
+        if (!readme.exists()) {
+            readme.writeText("This is a README file.")
+        }
+        println(readme.readLines())
+
+    }
+
+
 }
