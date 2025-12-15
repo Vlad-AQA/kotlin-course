@@ -9,6 +9,7 @@ fun main() {
 //    существует ли файл. Реши задачу с использованием scope функции без создания переменной.
 
     File("workspace/task1/example.txt").run {
+        parentFile.mkdirs()
         writeText("Hello, Kotlin!")
         check(exists()) { "Тут нет файла" }
     }
@@ -40,7 +41,7 @@ fun main() {
                 .resolve(name)
                 .mkdirs()
         }
-        myDir.listFiles().run {
+        myDir.listFiles()?.run {
             check(any { it.name == "subDir1" }) { "Не содержит subDir1" }
             check(any { it.name == "subDir2" }) { "Не содержит subDir2" }
         }
@@ -69,6 +70,7 @@ fun main() {
 //    а затем прочитайте файл и выведите только значения.
 
     File("workspace/task5/config/config.txt").apply {
+        parentFile.mkdirs()
         listOf(
             "ключ" to "значение",
             "ключ2" to "значение2",
