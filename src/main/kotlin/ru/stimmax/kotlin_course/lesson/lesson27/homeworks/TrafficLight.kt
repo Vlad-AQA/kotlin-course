@@ -1,6 +1,6 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson27.homeworks
 
-import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson27.homeworks.TrafficLightSignal.RED
+import ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson27.homeworks.TrafficLightSignal.*
 
 //Создай enum с перечислением для светофора.
 // Enum должен включать цвет из класса Colors, длительность сигнала duration
@@ -44,8 +44,17 @@ fun clear() {
 
 fun main() {
     while (true) {
-        showSignal(RED, 4000)
+        showSignal(RED)
         clear()
+        showSignal(YELLOW)
+        clear()
+        showSignal(GREEN)
+        clear()
+        if (GREEN.blinkTimes != null) {
+            repeat(GREEN.blinkTimes) {
+                showSignal(GREEN, 300)
+                clear()
+            }
+        }
     }
 }
-
