@@ -36,8 +36,8 @@ enum class SolarSystem(val distanceToSun: Double, val weightPlanet: Double) {
 
 fun valueClass() {
     HousingClass.entries
-        .sortedBy { it.value.length }
-        .forEach { println(it.value) }
+        .sortedBy { it.name.length }
+        .forEach { println(it.name) }
 }
 
 // Создай функцию, которая принимает лямбду без аргументов и возвращаемого значения и возвращает
@@ -52,7 +52,7 @@ fun getEnumValue(fn: () -> Unit): StatusTest {
         PASSED
     } catch (e: AssertionError) {
         FAILED
-    } catch (e: Exception) {
+    } catch (e: Throwable) {
         BROKEN
     }
 }
