@@ -47,6 +47,11 @@ fun main() {
     ).apply { exe(this) }
 
 
+    LocalDate.of(1950, 5, 1).identifyGeneration() // Бумер
+    LocalDate.of(2005, 3, 10).identifyGeneration() // Зумер
+    LocalDate.of(1988, 1, 1).identifyGeneration() // Не определено
+
+
 }
 
 // Создай функцию, которая принимает тип Temporal и выводит форматированное значение
@@ -110,3 +115,29 @@ fun exe1(arg: Temporal) {
         else -> println("Неизвестный тип")
     }
 }
+
+// Создайте функцию identifyGeneration, которая расширяет класс LocalDate и печатает строку,
+// определяющую, к какому поколению принадлежит человек родившийся в эту дату: "Бумер" для тех,
+// кто родился с 1946 по 1964 год включительно, и "Зумер" для тех, кто родился с 1997 по 2012 год включительно.
+// Если дата рождения не попадает ни в один из этих диапазонов, функция должна печатать "Не определено".
+// Для сравнения дат используй методы isAfter(otherDate) и isBefore(otherDate) или проверку вхождения в диапазон.
+// Объекты с эталонными датами вынеси в приватные поля файла с методом identifyGeneration.
+
+private val BOOMER_START: LocalDate = LocalDate.of(1946, 1, 1)
+private val BOOMER_END: LocalDate = LocalDate.of(1964, 12, 31)
+
+private val ZOOMER_START: LocalDate = LocalDate.of(1997, 1, 1)
+private val ZOOMER_END: LocalDate = LocalDate.of(2012, 12, 31)
+
+private fun LocalDate.isInRangeInclusive(start: LocalDate, end: LocalDate): Boolean {
+    return !this.isBefore(start) && !this.isAfter(end)
+}
+
+fun LocalDate.identifyGeneration() {
+    when {
+        this.isInRangeInclusive(BOOMER_START, BOOMER_END) -> println("Бумер")
+        this.isInRangeInclusive(ZOOMER_START, ZOOMER_END) -> println("Зумер")
+        else -> println("Не определено")
+    }
+}
+
