@@ -1,0 +1,25 @@
+{
+  "name": "Tech",
+  "established_year": 1905,
+  "faculties": [
+    {
+      "name": "",
+      "dean": "",
+      "launch_year": 2000,
+      "students": [
+        {
+          "first_name": "A",
+          "last_name": "B",
+          "age": 1,
+          "gender": "MALE"
+        },
+        {
+          "first_name": "C",
+          "last_name": "D",
+          "age": 12,
+          "gender": "FEMALE"
+        }
+      ]
+    }
+  ]
+}

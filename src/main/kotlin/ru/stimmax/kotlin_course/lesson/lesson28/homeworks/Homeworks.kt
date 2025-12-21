@@ -133,6 +133,7 @@ private fun LocalDate.isInRangeInclusive(start: LocalDate, end: LocalDate): Bool
     return !this.isBefore(start) && !this.isAfter(end)
 }
 
+
 fun LocalDate.identifyGeneration() {
     when {
         this.isInRangeInclusive(BOOMER_START, BOOMER_END) -> println("Бумер")
