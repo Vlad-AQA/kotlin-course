@@ -1,5 +1,6 @@
 package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson29.homeworkcs
 
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.File
 
@@ -93,6 +94,7 @@ fun main() {
     )
 
     ex(cto)
+    ex1(File("src/main/resources/CTO.json"))
 
 }
 
@@ -113,8 +115,18 @@ fun ex(cto: Employee) {
 
 }
 
+// Создай функцию в которой:
+// прочитай текст из файла
+// десериализуй его в объект класса Employee
+// распечатай в консоль
+
+
 fun ex1(file: File) {
-    
+    file.readText().also {
+        Gson().fromJson(it, Employee::class.java).run {
+            println(this)
+        }
+    }
 }
 
 

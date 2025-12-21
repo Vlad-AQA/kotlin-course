@@ -29,6 +29,11 @@ fun ex() {
 
 }
 
+// Создай функцию в которой:
+// прочитай текст из файла
+// десериализуй его в объект класса Employee
+// распечатай в консоль
+
 fun ex1() {
     val json = File("src/main/resources/uni.json").readText()
     val gson = Gson()
