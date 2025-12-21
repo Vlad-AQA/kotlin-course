@@ -1,0 +1,67 @@
+{
+  "name": "Влад",
+  "status": true,
+  "dateBirth": "06.07.1994",
+  "jobTitle": "CTO",
+  "subordinates": [
+    {
+      "name": "Павел",
+      "status": true,
+      "dateBirth": "11.11.1986",
+      "jobTitle": "CRM",
+      "subordinates": []
+    },
+    {
+      "name": "Валера",
+      "status": true,
+      "dateBirth": "10.10.1985",
+      "jobTitle": "PM",
+      "subordinates": [
+        {
+          "name": "Денис",
+          "status": true,
+          "dateBirth": "19.03.1988",
+          "jobTitle": "TEAM_LEAD",
+          "subordinates": [
+            {
+              "name": "Руслан",
+              "status": true,
+              "dateBirth": "27.06.1990",
+              "jobTitle": "BACKEND_DEV",
+              "subordinates": []
+            },
+            {
+              "name": "Сергей",
+              "status": true,
+              "dateBirth": "08.08.1999",
+              "jobTitle": "BACKEND_DEV",
+              "subordinates": []
+            }
+          ]
+        },
+        {
+          "name": "Джафар",
+          "status": true,
+          "dateBirth": "09.05.1987",
+          "jobTitle": "TEAM_LEAD",
+          "subordinates": [
+            {
+              "name": "Андрей",
+              "status": true,
+              "dateBirth": "01.01.1992",
+              "jobTitle": "FRONTEND_DEV",
+              "subordinates": []
+            },
+            {
+              "name": "Алексей",
+              "status": true,
+              "dateBirth": "07.02.1990",
+              "jobTitle": "FRONTEND_DEV",
+              "subordinates": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
