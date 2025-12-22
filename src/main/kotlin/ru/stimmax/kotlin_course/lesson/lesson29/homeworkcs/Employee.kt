@@ -129,6 +129,12 @@ fun ex1(file: File) {
     }
 }
 
+// Получение всех сотрудников выполняется через рекурсивную функцию,
+// которая принимает объект Employee а возвращает список всех Employee без вложений.
+
+fun Employee.flatt(): List<Employee> {
+    return listOf(this) + subordinates.flatMap { subo -> subo?.flatt() ?: emptyList() }
+}
 
 
 
