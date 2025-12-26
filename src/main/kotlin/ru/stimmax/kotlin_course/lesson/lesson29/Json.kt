@@ -32,6 +32,7 @@ fun main() {
     val json = gson.toJson(user) // Сериализация объекта
     println("JSON: $json")
 
+
     val user2 = gson.fromJson(json, User::class.java) // Десериализация JSON в объект
     println("User: $user2")
 
