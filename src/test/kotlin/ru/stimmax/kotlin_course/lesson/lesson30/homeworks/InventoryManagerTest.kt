@@ -53,7 +53,7 @@ class InventoryManagerTest {
     }
 
     @Test
-    fun `remove item not positively  test`() {
+    fun `remove item not positively test`() {
         assertFalse { inventoryManager.removeItem("chair", -1) }
     }
 
@@ -61,5 +61,11 @@ class InventoryManagerTest {
     fun `remove all item test`() {
         assertTrue { inventoryManager.removeItem("chair", 4) }
         assertEquals(null ?: 0, inventoryManager.getItemCount("chair"))
+    }
+
+    @Test
+    fun `remove item not capacity test`() {
+        assertFalse { inventoryManager.removeItem("chair", 5) }
+        assertEquals(4, inventoryManager.getItemCount("chair"))
     }
 }
