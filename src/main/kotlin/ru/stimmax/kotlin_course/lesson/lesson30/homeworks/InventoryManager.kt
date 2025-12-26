@@ -72,7 +72,7 @@ class InventoryManager(private val capacity: Int) {
      * @throws IllegalStateException в случае, если допустимое количество может быть превышено
      */
     private fun checkCapacity(itemsForAdding: Int) {
-        check(capacity - items.values.sum() >= itemsForAdding) {
+        check(capacity >= items.values.sum() + itemsForAdding) {
             "Количество инвентаря не должно превышать $capacity единиц"
         }
     }

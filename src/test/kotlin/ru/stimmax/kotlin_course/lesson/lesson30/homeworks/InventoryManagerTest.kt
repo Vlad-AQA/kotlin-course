@@ -67,5 +67,13 @@ class InventoryManagerTest {
     fun `remove item not capacity test`() {
         assertFalse { inventoryManager.removeItem("chair", 5) }
         assertEquals(4, inventoryManager.getItemCount("chair"))
+
     }
 }
+// метод приватный хз как тестить
+//    @Test
+//    fun `check capacity happy test`() {
+//        assertTrue { inventoryManager.c}
+//    }
+//}
+
