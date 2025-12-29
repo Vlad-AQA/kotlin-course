@@ -60,7 +60,7 @@ class InventoryManagerTest {
     @Test
     fun `remove all item test`() {
         assertTrue { inventoryManager.removeItem("chair", 4) }
-        assertEquals(null ?: 0, inventoryManager.getItemCount("chair"))
+        assertEquals(0, inventoryManager.getItemCount("chair"))
     }
 
     @Test

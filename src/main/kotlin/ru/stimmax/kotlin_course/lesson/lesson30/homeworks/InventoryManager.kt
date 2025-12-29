@@ -12,16 +12,16 @@ class InventoryManager(private val capacity: Int) {
      * Метод возвращает количество инвентаря. Если наименования нет, возвращает 0
      */
 
-//    fun getItemCount(itemName: String): Int = items[itemName] ?: 0 // можно и так
+    fun getItemCount(itemName: String): Int = items[itemName] ?: 0 // можно и так
 
-    fun getItemCount(itemName: String): Int {
-        return if (items.contains(itemName)) {
-            (items.getValue(itemName))
-        } else {
-            0
-        }
-
-    }
+//    fun getItemCount(itemName: String): Int {
+//        return if (items.contains(itemName)) {
+//            (items.getValue(itemName))
+//        } else {
+//            0
+//        }
+//
+//    }
 
 
     /**
@@ -31,12 +31,11 @@ class InventoryManager(private val capacity: Int) {
      * @throws IllegalStateException в случае, если допустимое количество может быть превышено
      */
     fun addItem(itemName: String, quantity: Int) {
+        checkCapacity(quantity)
         val nowItemCapacity = getItemCount(itemName)
-        if (items.values.sum() + quantity <= capacity) {
-            items[itemName] = nowItemCapacity + quantity
-        } else {
-            throw IllegalStateException()
-        }
+        items[itemName] = nowItemCapacity + quantity
+
+
     }
 
     /**
@@ -51,8 +50,7 @@ class InventoryManager(private val capacity: Int) {
         val newQuan = currentQuantity?.minus(quantity) ?: return false
 
         return when {
-            quantity < 0 -> false
-            quantity == 0 -> true
+            quantity <= 0 -> false
             quantity > currentQuantity -> false
             else -> {
                 if (newQuan == 0) {
