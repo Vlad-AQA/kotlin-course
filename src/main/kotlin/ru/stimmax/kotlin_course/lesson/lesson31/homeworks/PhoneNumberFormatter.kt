@@ -1,4 +1,4 @@
-package ru.stimmax.kotlin_course.lesson.lesson31.homeworks
+package ru.stimmax.ru.stimmax.kotlin_course.lesson.lesson31.homeworks
 
 class PhoneNumberFormatter(
     private val lowNumber: String,
@@ -25,12 +25,13 @@ class PhoneNumberFormatter(
     }
 
 
-    fun numberF(): String {
+    fun getNumber(): String {
         val countryCode = numberFormat.substring(0, 1)
         val region = numberFormat.substring(1, 4)
         val part1 = numberFormat.substring(4, 7)
         val part2 = numberFormat.substring(7, 9)
         val part3 = numberFormat.substring(9, 11)
+
         return "+$countryCode ($region) $part1-$part2-$part3"
     }
 
